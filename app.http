@@ -1,0 +1,51 @@
+GET http://localhost:3000/states/
+###
+
+GET http://localhost:3000/states/4/
+###
+
+POST http://localhost:3000/districts/
+Content-Type: application/json
+
+{
+  "districtName": "Bagalkot",
+  "stateId": 3,
+  "cases": 2323,
+  "cured": 2000,
+  "active": 315,
+  "deaths": 8
+}
+###
+
+//Returns a district based on the district ID
+GET http://localhost:3000/districts/2/
+
+###
+
+//Deletes a district from the district table based on the district ID
+DELETE http://localhost:3000/districts/1/
+###
+
+//Updates the details of a specific district based on the district ID
+PUT http://localhost:3000/districts/15/
+Content-Type: application/json
+
+{
+  "districtName": "Nadia",
+  "stateId": 3,
+  "cases": 9628,
+  "cured": 6524,
+  "active": 3000,
+  "deaths": 104
+}
+
+###
+//Returns the statistics of total cases, cured, active, deaths of a specific state based on state ID
+
+GET http://localhost:3000/states/1/stats/ 
+###
+
+//Returns an object containing the state name of a district based on the district ID
+GET http://localhost:3000/districts/250/details/
+
+
